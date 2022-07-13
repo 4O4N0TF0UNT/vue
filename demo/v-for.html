@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="添加数据" @click="add">
+        <input type="button" value="移除数据" @click="remove">
+        <ul>
+            <li v-for="it in arr">
+                邱静纯的特点：{{  it  }}
+            </li>
+           
+        </ul>
+        <h2 v-for="item in food" v-bind:title="item.name">
+            {{item.name}}
+        </h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                arr:["毒舌","卑鄙","心术不正","沉迷游戏"],
+                food:[
+                    {name:"麻辣香锅"},
+                    {name:"牛筋丸汤面"}
+                ]
+
+            },
+            methods:{
+                add:function(){
+                    this.food.push({name:"烤肉饭"});
+                },
+                remove:function(){
+                    this.food.shift();
+                }
+            }
+        })
+    </script>
+</body>
+</html>

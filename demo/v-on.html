@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="v-on" v-on:click="doIt">
+        <input type="button" value="单击" @click="doIt">
+        <input type="button" value="双击" @dblclick="doIt">
+        <h2 @click="changefood">{{food}}</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                food:"西兰花炒鸡蛋"
+            },
+            methods:{
+                doIt:function(){
+                    alert("做IT");
+                },
+                changefood:function(){
+                this.food+='好好吃'
+            }
+            },
+            
+        
+        })
+    </script>
+</body>
+</html>

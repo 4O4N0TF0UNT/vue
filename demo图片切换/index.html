@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo图片切换</title>
+   
+</head>
+<body>
+    <div id="mask">
+        <img :src="imgArr[index]" alt="" />
+        <a href="javascript:void(0)" v-show="index!=0" @click="prev" class="left">
+            <img src="./image/prev.jpg" alt="" style="width: 30px; height:30px">
+        </a>
+        <a href="javascript:void(1)" v-show="index<imgArr.length-1" @click="next" class="right">
+            <img src="./image/next.jpg" alt=""style="width: 30px; height:30px">
+        </a>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:"#mask",
+            data:{
+                imgArr:[
+                    "./image/可爱1.png",
+                    "./image/可爱2.png",
+                    "./image/可爱3.png",
+                    "./image/可爱4.png",
+                    "./image/可爱5.png",
+                    "./image/可爱6.png",
+                ],
+                index:0
+            },
+            methods:{
+                prev:function(){
+                    this.index--;
+                },
+                next:function(){
+                    this.index++;
+                }
+
+            }
+        })
+    </script>
+    
+</body>
+</html>

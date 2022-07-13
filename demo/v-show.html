@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-show</title>
+</head>
+<body>
+<div id="app">
+    <image v-show="isShow" src="./image/quite.png"></image>
+    <input  type="button" value="切换显示状态" @click="changeisShow"></input>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                isShow:false
+            },
+            methods:{
+                changeisShow:function(){
+                    this.isShow=!this.isShow;
+                }
+            },
+        })
+    </script>
+</body>
+</html>
